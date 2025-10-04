@@ -47,6 +47,7 @@
         <a href="#">Dashboard</a>
         <a href="<?= site_url('admin/anggota') ?>">Kelola Anggota</a>
         <a href="<?= site_url('admin/komponengaji') ?>">Kelola Komponen Gaji</a>
+        <a href="<?= site_url('admin/penggajian') ?>">Kelola Penggajian</a>
         <a href="<?= site_url('logout') ?>">Logout</a>
     </nav>
 

@@ -3,10 +3,16 @@
 <?= $this->section('content') ?>
     <div class="container mt-4">
         <div class="card shadow-sm">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between align-items-center">
                 <h3>Data Penggajian Anggota</h3>
-            </div>
+                </div>
             <div class="card-body">
+                <?php if (session()->getFlashdata('success')) : ?>
+                    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+                <?php endif; ?>
+
+                <a href="<?= site_url('admin/penggajian/new') ?>" class="btn btn-success mb-3">Tambah Penggajian Baru</a>
+                
                 <div class="table-responsive">
                     <table class="table table-hover table-striped">
                         <thead>
@@ -27,7 +33,7 @@
                                     <td><?= esc($item['jabatan']) ?></td>
                                     <td>Rp <?= number_format($item['take_home_pay'], 2, ',', '.') ?></td>
                                     <td>
-                                        <a href="<?= site_url('admin/anggota/'.$item['id_anggota']) ?>" class="btn btn-info btn-sm">Detail</a>
+                                        <a href="<?= site_url('admin/penggajian/show'.$item['id_anggota']) ?>" class="btn btn-info btn-sm">Detail</a>
                                     </td>
                                 </tr>
                                 <?php endforeach; ?>

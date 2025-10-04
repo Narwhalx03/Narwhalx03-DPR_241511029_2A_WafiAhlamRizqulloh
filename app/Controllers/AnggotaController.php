@@ -60,14 +60,16 @@ class AnggotaController extends BaseController
 
     public function show($id = null)
     {
-        $anggotaModel = new AnggotaModel();
+        $model = new \App\Models\AnggotaModel();
         $data = [
             'title'   => 'Detail Anggota DPR',
-            'anggota' => $anggotaModel->find($id)
+            'anggota' => $model->find($id)
         ];
+
         if (empty($data['anggota'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data anggota tidak ditemukan.');
         }
+
         return view('anggota/show', $data);
     }
     

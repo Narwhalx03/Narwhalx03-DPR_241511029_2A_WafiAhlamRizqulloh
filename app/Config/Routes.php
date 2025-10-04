@@ -25,7 +25,10 @@ $routes->resource('admin/komponengaji', ['controller' => 'KomponenGajiController
 
 // Penggajian
 $routes->get('admin/penggajian', 'PenggajianController::index', ['filter' => 'admin']);
-
+// Tambahkan dua rute ini
+$routes->get('admin/penggajian/new', 'PenggajianController::new', ['filter' => 'admin']);
+$routes->post('admin/penggajian', 'PenggajianController::create', ['filter' => 'admin']);
+$routes->get('admin/penggajian/get_komponen/(:segment)/(:num)', 'PenggajianController::getKomponenByJabatan/$1/$2', ['filter' => 'admin']);
 
 // Rute untuk fitur Public (Hanya Melihat Anggota)
 // Kita batasi hanya untuk 'index' (melihat daftar) dan 'show' (melihat detail)
