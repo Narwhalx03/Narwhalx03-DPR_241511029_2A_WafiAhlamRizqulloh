@@ -23,6 +23,10 @@ $routes->resource('admin/anggota', ['controller' => 'AnggotaController', 'filter
 // Komponen Gaji
 $routes->resource('admin/komponengaji', ['controller' => 'KomponenGajiController', 'filter' => 'admin']);
 
+// Penggajian
+$routes->get('admin/penggajian', 'PenggajianController::index', ['filter' => 'admin']);
+
+
 // Rute untuk fitur Public (Hanya Melihat Anggota)
 // Kita batasi hanya untuk 'index' (melihat daftar) dan 'show' (melihat detail)
 $routes->resource('public/anggota', [
